@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Здоровье+</title>
+  </head>
+  <body>
+    <form method="post" action="https://healthplus-clinic.ru/appointment/submit" autocomplete="off">
+        <fieldset>
+            <div class="legendCenter">
+                <legeng>Персональные данные пациента</legeng>
+            </div>
+            <div>
+                <div>
+                    <label for="fio">ФИО: </label>
+                    <input
+                        id="fio"
+                        name="fio"
+                        placeholder="Иванов Иван Иванович"
+                        required
+                    />
+                </div>
+                <div>   
+                    <label for="dateOfEnter">Желаемая дата визита: </label>
+                    <input
+                        type="date"
+                        name="dateOfEnter"
+                        id="dateOfEnter"
+                        min="1925-09-13"
+                        max="2025-09-12"
+                    />
+                </div>
+
+                <div>
+                <input type="radio" name="gender" id="genderMale" checked />
+                <label for="genderMale">Мужской</label>
+
+                <input type="radio" name="gender" id="genderFamale" />
+                <label for="genderFamale">Женский</label>
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input placeholder="example@gmail.com" type="email" name="email" id="email" autocomplete="on" />
+                </div>
+                <div>
+                    <label for="telNumber">Телефон: </label>
+                    <input
+                        type="tel"
+                        name="telNumber"
+                        id="telNumber"
+                        placeholder="+7 (XXX) XXX-XX-XX"
+                    />
+                </div>
+
+                <div>
+                    <select name="citySelect" id="citySelect">
+                        <option value="selectDefault" selected disabled>
+                            Выберете ваш город
+                        </option>
+                        <option value="Tomsk">Томск</option>
+                        <option value="Krasnodar">Краснодар</option>
+                        <option value="Kazan">Казань</option>
+                        <option value="Ufa">Уфа</option>
+                        <option value="Sevastopol">Севастополь</option>
+                    </select>
+                </div>
+                
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="legendCenter">
+                <legeng>Параметры обследования</legeng>
+            </div>
+        <div>
+            <div>
+                <label for="visitDate">Желаемая дата визита: </label>
+                <input type="datetime-local" name="visitDate" id="visitDate" required>
+            </div>
+
+            <div>
+                <input type="checkbox" name="biochimOfBlood" id="biochimOfBlood">
+                <label for="biochimOfBlood">Биохимия крови</label>
+
+                <input type="checkbox" name="OnkoMarkers" id="OnkoMarkers">
+                <label for="OnkoMarkers">Онкомаркеры</label>
+
+                <input type="checkbox" name="SrceenOfGenetic" id="SrceenOfGenetic">
+                <label for="SrceenOfGenetic">Генетический скрининг</label>
+
+                <input type="checkbox" name="gormonProfile" id="gormonProfile">
+                <label for="gormonProfile">Гормональный профиль</label>
+            </div>
+            <div>  
+                <label for="obsledPrice">5000</label>
+                <input type="range" name="obsled" list="obsled" id="obsledPrice" min="5000" max="50000" step="1000">
+                <label id="obsledPrice">50000</label>
+
+                <datalist id="obsled">
+                    <option value="5000">
+                    <option value="10000">
+                    <option value="25000">
+                    <option value="50000">
+                </datalist>
+            </div>
+            <div>
+            <select name="healerSelect" id="healerSelect">
+                <optgroup label="Стаж 1-5 лет">
+                    <option value="healer1">Григорьев И.В.</option>
+                    <option value="healer2">Зубенко М.П.</option>
+                </optgroup>
+                <optgroup label="Стаж 5-10 лет">
+                    <option value="healer3">Мамизеров Л.Х.</option>
+                    <option value="healer4">Зайцева Л.Б.</option>
+                </optgroup>
+                <optgroup label="Стаж более 10 лет">
+                    <option value="healer5">Розеткин Ч.И.</option>
+                    <option value="healer6">Воронова Ш.Л.</option>
+                </optgroup>
+            </select>
+            </div>
+        </div>
+        </fieldset>
+        <fieldset>
+            <div class="legendCenter">
+                <legeng>Дополнительная информация</legeng>
+            </div>
+        <div class="otherInfo">
+            <label for="otherInfo">Аллергии и хронические заболевания: </label>
+            <textarea name="otherInfo" id="otherInfo" rows="5" cols="50" placeholder="Укажите, если есть..."></textarea>
+        </div>
+        <div>
+            <label for="halatColor">Предпочтительный цвет халата медсестры: </label>
+            <input type="color" name="halatColor" list="colorInput" id="halatColor">
+            <datalist name="colorInput" id="colorInput">
+                <option value="#FF0000" label="Красный"></option>
+                <option value="#00FF00" label="Зеленый"></option>
+                <option value="#0000FF" label="Синий"></option>
+                <option value="#ffffff" label="Белый"></option>
+                <option value="#F5EDDC" label="Бежевый"></option>
+            </datalist>
+        </div>
+        <div>
+            <label for="fileDirection">Загрузка направления от другого врача (опционально): </label>
+            <input type="file" name="fileDirection" id="fileDirection" accept=".pdf">
+        </div>
+        </fieldset>
+        <div>
+            <input type="reset">Очистить форму</button>
+            <button type="submit">Записаться на обследование</button>
+        </div>
+    </form>
+  </body>
+</html>
